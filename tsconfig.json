@@ -1,26 +1,37 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+    "target": "es5",        
+		"plugins": [{ "name": "typescript-plugin-css-modules" }] , 
+    "module": "commonjs",                    
+    "lib": [                                 
+      "esnext",
+      "dom"
+    ],  
+    "jsx": "react-jsx",                    
+    "declaration": true,                 
+    "sourceMap": true,                    
+    "outDir": "./dist",                     
+    "strict": true,                     
+    "moduleResolution": "node",              
+    "baseUrl": "./",                   
+    "paths": {
+		  "@src/*": ["src/*"],
+		  "@assets/*": ["src/assets/*"],
+      "@public/*": ["public/*"], 
+      "@hooks/*": ["src/hooks/*"],
+      "@styles/*": ["src/styles/*"],
+ 		},                           
+    "typeRoots": [                           
+      "node_modules/@types",
+      "src/typings.d.ts",
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "esModuleInterop": true,                   
+    "experimentalDecorators": true,       
+    "emitDecoratorMetadata": true         
   },
-  "include": [
-    "src"
-  ]
-}
+  "exclude": [
+    "node_modules",
+    "dist"
+  ], 
+  "include": ["src", "types", "index.tsx"],
+}    
