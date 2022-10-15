@@ -1,0 +1,21 @@
+# dependencies
+/node_modules
+
+
+#vscode
+/.vscode
+
+/dist
+
+/public/dist  
+/public/dist/main.css   
+/public/dist/index.html  
+
+
+yarn-error.log*
+
+# local env files
+.env
+
+tsconfig.tsbuildinfo
+package-lock.json 
