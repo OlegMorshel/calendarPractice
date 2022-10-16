@@ -1,12 +1,16 @@
 import React from "react"
-import CalendarComponent from "./components/UI/Calendar/CalendarComponent"
+import { BrowserRouter } from "react-router-dom"
+import RoutesProvider from "./providers/RoutesProvider"
+
+import "./styles/index.scss"
 
 function App() {
 	return (
-		<div className="App">
-			<CalendarComponent />
-		</div>
+		<React.StrictMode>
+			<BrowserRouter>
+				<RoutesProvider />
+			</BrowserRouter>
+		</React.StrictMode>
 	)
 }
-
 export default App

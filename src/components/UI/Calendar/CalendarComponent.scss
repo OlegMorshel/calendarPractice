@@ -4,115 +4,138 @@ $activeDay: #4ca6fe;
 $weekendColor: #5cb85c;
 $orange: #ff7733;
 
-.calendar__wrapper {
-  background: lightcoral;
-  padding: 50px;
+.calendar {
+	&__base {
+		min-width: 1028px;
+		max-width: 1028px;
+	}
+
+	&__header {
+		width: 1028px;
+		height: 28px;
+		margin-bottom: 29px;
+	}
+
+	&__cell {
+		border-top: 1px solid $borderColor;
+		height: 141px;
+		background: white;
+		padding: 12px;
+		position: relative;
+		&:first-child {
+			border-left: 1px solid $borderColor;
+		}
+		&:last-child {
+			border-right: 1px solid $borderColor;
+		}
+	}
+
+	&__cell + &__cell {
+		border-left: 1px solid $borderColor;
+	}
+
+	&__day {
+		color: $gray;
+		border-radius: 0;
+		max-height: 35px;
+		background: white;
+		border-radius: 50%;
+
+		position: absolute;
+		top: 11px;
+		left: 12px;
+		border-radius: 50%;
+
+		&:focus,
+		&:active {
+			background: $activeDay;
+			top: 11px;
+			left: 12px;
+			color: white;
+		}
+
+		&[data-weekend] {
+			color: $weekendColor;
+		}
+
+		&[data-selected] {
+			color: white;
+		}
+	}
+
+	&__month {
+		width: 100%;
+		max-width: 1028px;
+	}
 }
 
-.calendar {
-  &__base {
-    min-width: 1028px;
-    max-width: 1028px;
-  }
+.header {
+	&__control {
+		height: 28px;
+	}
 
-  &__cell {
-    border-top: 1px solid $borderColor;
-    height: 141px;
-    background: white;
-    padding: 12px;
-    position: relative;
-  }
-
-  &__cell + &__cell {
-    border-left: 1px solid $borderColor;
-  }
-
-  &__day {
-    color: $gray;
-    border-radius: 0;
-    max-height: 35px;
-    background: white;
-    border-radius: 50%;
-
-    position: absolute;
-    top: 11px;
-    left: 12px;
-    border-radius: 50%;
-
-    &:focus,
-    &:active {
-      background: $activeDay;
-      top: 11px;
-      left: 12px;
-      color: white;
-    }
-
-    &[data-weekend] {
-      color: $weekendColor;
-    }
-
-    &[data-selected] {
-      color: white;
-    }
-  }
-
-  &__month {
-    width: 100%;
-    max-width: 1028px;
-  }
+	&__level {
+		height: 28px;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 28px;
+	}
 }
 
 .weekday {
-  background: white;
-  border-bottom: 0;
-  text-transform: uppercase;
-  padding: 18px;
-  color: $gray;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
+	background: white;
+	border-bottom: 0;
+	text-transform: uppercase;
+	padding: 18px;
+	color: $gray;
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 23px;
+	border-top: 1px solid $borderColor;
+	&__cell {
+		padding-bottom: 0;
+		padding-bottom: 0;
+		height: 59px;
+	}
 
-  &__cell {
-    padding-bottom: 0;
-    padding-bottom: 0;
-    height: 59px;
-  }
-
-  &__cell + &__cell {
-    border-left: 1px solid $borderColor;
-  }
+	&__cell + &__cell {
+		border-left: 1px solid $borderColor;
+	}
 }
 
 table {
-  tr {
-    &:last-child {
-      td {
-        &:first-child {
-          border-radius: 0 0 0 8px;
-        }
+	tr {
+		&:last-child {
+			td {
+				border-bottom: 1px solid $borderColor;
+				&:first-child {
+					border-radius: 0 0 0 8px;
+				}
 
-        &:last-child {
-          border-radius: 0 0 8px 0;
-        }
-      }
-    }
+				&:last-child {
+					border-radius: 0 0 8px 0;
+				}
+			}
+		}
 
-    &:first-child {
-      th {
-        &:first-child {
-          div {
-            border-radius: 8px 0 0 0;
-          }
-        }
+		&:first-child {
+			th {
+				&:first-child {
+					div {
+						border-left: 1px solid $borderColor;
+						border-radius: 8px 0 0 0;
+					}
+				}
 
-        &:last-child {
-          div {
-            border-radius: 0 8px 0 0;
-          }
-        }
-      }
-    }
-  }
+				&:last-child {
+					div {
+						border-radius: 0 8px 0 0;
+						border-right: 1px solid $borderColor;
+					}
+				}
+			}
+		}
+	}
 }

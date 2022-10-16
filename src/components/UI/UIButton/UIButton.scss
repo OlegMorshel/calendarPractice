@@ -1,0 +1,22 @@
+$blue: #2b96f1;
+.button {
+  width: 100%;
+  background-color: $blue;
+  color: white;
+  border-radius: 6px;
+
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+
+  opacity: 1;
+  transition: all 0.24s linear;
+
+  &:disabled {
+    transition: all 0.24s linear;
+    background-color: $blue;
+    color: white;
+    opacity: 0.25;
+  }
+}
