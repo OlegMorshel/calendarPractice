@@ -1,41 +1,53 @@
 import { Textarea, TextInput } from "@mantine/core"
-import { DatePicker } from "@mantine/dates"
-import React from "react"
+import React, { ChangeEventHandler } from "react"
 import "./Input.scss"
 
 export enum InputTypeEnum {
-	DATE = "DATE",
 	TEXT = "TEXT",
 	TEXTAREA = "TEXTAREA",
 }
 
 interface Props {
 	inputType?: InputTypeEnum
-	classNameForWrapper?: string
 	name?: string
 	id?: string
 	placeholder?: string
+	error?: string
+	values?: string
+	setValue: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
+	classNameForWrapper?: string
 }
 
-const Input: React.FC<Props> = ({ inputType = InputTypeEnum.TEXT, classNameForWrapper, id, name, placeholder }) => {
-	// const handleChange = (e: Date | string) => {}
+const Input: React.FC<Props> = ({ setValue, error, id, placeholder, values, name, classNameForWrapper, inputType }) => {
+	const handleChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = event => {
+		setValue(event)
+	}
+
 	switch (inputType) {
-		case InputTypeEnum.DATE:
+		case InputTypeEnum.TEXTAREA:
 			return (
-				<DatePicker
-					required
-					placeholder="ДД.ММ.ГГ"
-					inputFormat="DD.MM.YYYY"
-					classNames={{ input: `${classNameForWrapper} input__date` }}
-					className={classNameForWrapper}
+				<Textarea
+					value={values}
+					classNames={{ root: `${classNameForWrapper} input__textarea`, label: "input__wrapper" }}
+					placeholder={placeholder}
+					onChange={e => handleChange(e)}
 					name={name}
+					error={error}
 					id={id}
 				/>
 			)
-		case InputTypeEnum.TEXTAREA:
-			return <Textarea classNames={{ input: `${classNameForWrapper} input__textarea`, label: "input__wrapper" }} placeholder={placeholder} />
 		default:
-			return <TextInput classNames={{ input: `${classNameForWrapper} input__text` }} placeholder={placeholder} />
+			return (
+				<TextInput
+					value={values}
+					classNames={{ root: `${classNameForWrapper} input__text` }}
+					placeholder={placeholder}
+					onChange={e => handleChange(e)}
+					name={name}
+					error={error}
+					id={id}
+				/>
+			)
 	}
 }
 

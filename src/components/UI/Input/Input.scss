@@ -1,16 +1,15 @@
 .input {
-  &__text,
-  &__date,
-  &__textarea {
-    &::placeholder {
-      font-family: "Helvetica Neue";
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 21px;
-      color: #aaaaaa;
-    }
-  }
+	&__text,
+	&__textarea {
+		&::placeholder {
+			font-family: "Helvetica Neue";
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 21px;
+			color: #aaaaaa;
+		}
+	}
 }
 .input__wrapper {
-  padding: 8px 10px;
+	padding: 8px 10px;
 }

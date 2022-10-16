@@ -7,11 +7,13 @@ interface Props {
 	label?: string
 	classNameForWrapper?: string
 	disabled?: boolean
+	onClick?: () => void
+	type?: "button" | "submit" | "reset"
 }
 
-const UIButton: React.FC<Props> = ({ label, classNameForWrapper, disabled = false }) => {
+const UIButton: React.FC<Props> = ({ label, classNameForWrapper, disabled = false, onClick, type }) => {
 	return (
-		<Button title="text" classNames={{ root: `${classNameForWrapper} button` }} disabled={disabled}>
+		<Button title="text" type={type} classNames={{ root: `${classNameForWrapper} button` }} disabled={disabled} onClick={onClick}>
 			{label}
 		</Button>
 	)

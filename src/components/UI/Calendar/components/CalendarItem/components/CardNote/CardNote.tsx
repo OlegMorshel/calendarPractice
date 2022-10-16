@@ -8,8 +8,9 @@ interface Props {
 }
 
 const CardNote: React.FC<Props> = ({ note }) => {
+	const onCardClick = () => console.log("note", note)
 	return (
-		<div className="note">
+		<div className="note" onClick={onCardClick}>
 			<Text
 				component="p"
 				align="start"

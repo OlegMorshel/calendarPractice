@@ -10,13 +10,12 @@ interface Props {
 
 const CalendarItem: React.FC<Props> = ({ notes, date }) => {
 	const day = date.getDate()
+
 	return (
 		<>
 			<p className="day__text">{day}</p>
 			<div className={notes.length <= 1 ? "notes__wrapper-single" : "notes__wrapper-miltiple"}>
-				{notes.map(note => (
-					<CardNote note={note} key={note.id} />
-				))}
+				{notes.length ? notes.map(note => <CardNote note={note} key={note.id} />) : <></>}
 			</div>
 		</>
 	)
