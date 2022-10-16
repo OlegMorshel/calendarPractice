@@ -83,7 +83,6 @@ module.exports = {
 						options: {
 							sourceMap: true,
 							implementation: require("sass"),
-							additionalData: `@import "@src/styles/variables.scss";`,
 						},
 					},
 				],
@@ -154,7 +153,7 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			process: "process/browser",
 		}),
-		new CleanWebpackPlugin(),
+		// new CleanWebpackPlugin(),
 		new Dotenv(),
 	].filter(Boolean),
 }

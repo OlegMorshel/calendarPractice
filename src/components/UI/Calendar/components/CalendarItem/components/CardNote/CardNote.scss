@@ -1,0 +1,48 @@
+$orange: #ff7733;
+
+.notes__wrapper {
+  &-miltiple {
+    row-gap: 6px;
+    max-height: 54px;
+    overflow: auto;
+  }
+  &-single {
+    height: 54px;
+    justify-content: flex-end;
+  }
+  &-miltiple,
+  &-single {
+    display: flex;
+    flex-direction: column;
+    width: 122px;
+
+    &::-webkit-scrollbar {
+      height: 0px;
+      width: 0px;
+    }
+    &::-webkit-scrollbar-track-piece {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+
+    .note {
+      background: rgba(242, 107, 81, 0.12);
+      padding: 3px 10px 3px 4px;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      &__text {
+        color: $orange;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+}
