@@ -5,10 +5,18 @@ $orange: #ff7733;
 		row-gap: 6px;
 		max-height: 54px;
 		overflow: auto;
+
+		@media (max-width: "1100px") {
+			max-height: 44px;
+		}
 	}
 	&-single {
 		height: 54px;
 		justify-content: flex-end;
+
+		@media (max-width: "1100px") {
+			height: 44px;
+		}
 	}
 	&-miltiple,
 	&-single {
@@ -17,6 +25,9 @@ $orange: #ff7733;
 
 		width: 122px;
 
+		@media (max-width: "1100px") {
+			max-width: 81px;
+		}
 		&::-webkit-scrollbar {
 			height: 0px;
 			width: 0px;
@@ -37,6 +48,10 @@ $orange: #ff7733;
 			box-sizing: border-box;
 			border-radius: 4px;
 
+			@media (max-width: "1100px") {
+				padding: 3px 6px 3px 4px;
+			}
+
 			&__text {
 				font-family: "Helvetica Neue";
 				font-size: 12px;
@@ -49,6 +64,11 @@ $orange: #ff7733;
 				text-overflow: ellipsis;
 
 				margin: 0;
+
+				@media (max-width: "1100px") {
+					font-size: 10px;
+					line-height: 12px;
+				}
 			}
 		}
 	}

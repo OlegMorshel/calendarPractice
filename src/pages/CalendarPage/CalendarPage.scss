@@ -2,6 +2,10 @@
 	&__wrapper {
 		background: white;
 		padding: 0 30px 81px;
+
+		@media (max-width: "1100px") {
+			padding: 0 30px 28px;
+		}
 	}
 	&__title {
 		font-family: "Helvetica Neue";
@@ -12,7 +16,13 @@
 		color: #191919;
 
 		padding-top: 30px;
-		margin-bottom: 25px;
+		margin-bottom: 54px;
+
+		@media (max-width: "1100px") {
+			font-size: 28px;
+			line-height: 30px;
+			margin-bottom: 31px;
+		}
 	}
 }
 
@@ -22,6 +32,10 @@
 		align-items: flex-start;
 		column-gap: 30px;
 		flex-wrap: wrap;
+
+		@media (max-width: "1100px") {
+			justify-content: center;
+		}
 	}
 
 	&__form {
