@@ -1,9 +1,9 @@
 import CalendarComponent from "@src/components/UI/Calendar/CalendarComponent"
 import { ICalendarCard } from "@src/components/UI/Calendar/utils"
 import React, { useState } from "react"
+import AddNoteForm from "./components/AddNoteForm/AddNoteForm"
 
 import "./CalendarPage.scss"
-import AddNoteForm from "./components/AddNoteForm/AddNoteForm"
 
 const CalendarPage: React.FC = () => {
 	const [calendarNotes, setCalendarNotes] = useState<ICalendarCard[]>([])

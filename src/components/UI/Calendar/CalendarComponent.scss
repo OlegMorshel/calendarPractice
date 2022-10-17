@@ -13,14 +13,18 @@ $orange: #ff7733;
 	&__header {
 		width: 1028px;
 		height: 28px;
+
 		margin-bottom: 29px;
 	}
 
 	&__cell {
-		border-top: 1px solid $borderColor;
 		height: 141px;
+
 		background: white;
 		padding: 12px;
+
+		border-top: 1px solid $borderColor;
+
 		position: relative;
 		&:first-child {
 			border-left: 1px solid $borderColor;
@@ -36,22 +40,24 @@ $orange: #ff7733;
 
 	&__day {
 		color: $gray;
-		border-radius: 0;
+
 		max-height: 35px;
 		background: white;
-		border-radius: 50%;
 
 		position: absolute;
 		top: 11px;
 		left: 12px;
+
 		border-radius: 50%;
 
 		&:focus,
 		&:active {
+			color: white;
+
 			background: $activeDay;
+
 			top: 11px;
 			left: 12px;
-			color: white;
 		}
 
 		&[data-weekend] {
@@ -75,29 +81,37 @@ $orange: #ff7733;
 	}
 
 	&__level {
-		height: 28px;
+		font-family: "Helvetica Neue";
 		font-weight: 500;
 		font-size: 24px;
 		line-height: 28px;
+
+		height: 28px;
 	}
 }
 
 .weekday {
-	background: white;
-	border-bottom: 0;
-	text-transform: uppercase;
-	padding: 18px;
-	color: $gray;
-	display: flex;
-	align-items: center;
+	font-family: "Helvetica Neue";
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 23px;
+	color: $gray;
+	text-transform: uppercase;
+
+	display: flex;
+	align-items: center;
+
+	background: white;
+	padding: 18px;
+
+	border-bottom: 0;
 	border-top: 1px solid $borderColor;
+
 	&__cell {
-		padding-bottom: 0;
-		padding-bottom: 0;
 		height: 59px;
+
+		padding-bottom: 0;
+		padding-bottom: 0;
 	}
 
 	&__cell + &__cell {

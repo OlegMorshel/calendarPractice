@@ -11,14 +11,7 @@ const CardNote: React.FC<Props> = ({ note }) => {
 	const onCardClick = () => console.log("note", note)
 	return (
 		<div className="note" onClick={onCardClick}>
-			<Text
-				component="p"
-				align="start"
-				gradient={{ from: "indigo", to: "cyan", deg: 45 }}
-				size="xl"
-				style={{ fontFamily: "Greycliff CF, sans-serif" }}
-				className={"note__text"}
-			>
+			<Text component="p" align="start" size="xl" className={"note__text"}>
 				{note.shortName}
 			</Text>
 		</div>

@@ -8,47 +8,63 @@ import "./AddNoteForm.scss"
 import { ICalendarCard } from "@src/components/UI/Calendar/utils"
 import { generateId } from "@src/utils/generateId"
 
-interface Props {
-	classNamesForWrapper?: string
-	addCalendarNote: (note: ICalendarCard) => void
-}
-
 interface IAddNote {
 	date: string | null
 	name: string
 	description: string
 }
 
+interface Props {
+	classNamesForWrapper?: string
+	addCalendarNote: (note: ICalendarCard) => void
+}
+
 const AddNoteFrom: React.FC<Props> = ({ classNamesForWrapper, addCalendarNote }) => {
+	const initialAddNoteFormValues = {
+		date: "",
+		name: "",
+		description: "",
+	}
+
 	const addNoteForm = useFormik<IAddNote>({
-		initialValues: {
-			date: "",
-			name: "",
-			description: "",
-		},
+		initialValues: { ...initialAddNoteFormValues },
 		validationSchema: AddNoteValidationSchema,
 		validateOnMount: true,
 		validateOnChange: true,
-		onSubmit: values =>
+		onSubmit: values => {
 			addCalendarNote({
 				description: values.description,
 				shortName: values.name,
 				date: values.date ? new Date(values.date) : new Date(),
 				id: generateId(),
-			}),
+			})
+			resetValues()
+		},
 	})
 
-	const { values, errors, handleChange, handleSubmit, setFieldValue, isValid } = addNoteForm
+	const { values, errors, handleChange, handleSubmit, setFieldValue, isValid, resetForm } = addNoteForm
+
+	function resetValues() {
+		resetForm({ values: { date: "", description: "", name: "" } })
+	}
 
 	return (
 		<div className={`form__inner ${classNamesForWrapper}`}>
 			<h5 className="form__title">Добавить событие</h5>
 			<form className="form" onSubmit={e => e.preventDefault()}>
-				<UIDatePicker id="date" name="date" setFieldValue={setFieldValue} classNameForWrapper="input__date" error={errors.date} />
+				<UIDatePicker
+					id="date"
+					name="date"
+					setFieldValue={setFieldValue}
+					classNameForWrapper="input__date"
+					values={values.date ? new Date(values.date) : null}
+					error={errors.date}
+				/>
 				<Input
 					classNameForWrapper="input__name"
 					placeholder="Укажите короткое название"
 					setValue={handleChange}
+					values={values.name}
 					error={errors.name}
 					id={"name"}
 					name={"name"}

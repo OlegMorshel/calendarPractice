@@ -14,6 +14,7 @@ $orange: #ff7733;
 	&-single {
 		display: flex;
 		flex-direction: column;
+
 		width: 122px;
 
 		&::-webkit-scrollbar {
@@ -29,19 +30,25 @@ $orange: #ff7733;
 
 		.note {
 			background: rgba(242, 107, 81, 0.12);
-			padding: 3px 10px 3px 4px;
 			width: 100%;
+
+			padding: 3px 10px 3px 4px;
+
 			box-sizing: border-box;
 			border-radius: 4px;
 
 			&__text {
+				font-family: "Helvetica Neue";
+				font-size: 12px;
+				line-height: 18px;
+				font-weight: 500;
 				color: $orange;
+
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
+
 				margin: 0;
-				font-size: 12px;
-				line-height: 18px;
 			}
 		}
 	}

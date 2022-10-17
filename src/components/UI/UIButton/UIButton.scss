@@ -5,13 +5,16 @@ $blue: #2b96f1;
 	color: white;
 	border-radius: 6px;
 
-	font-family: "Helvetica Neue";
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 18px;
-
 	opacity: 1;
 	transition: all 0.24s linear;
+
+	&__label {
+		font-family: "Helvetica Neue";
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: 0.005em;
+	}
 
 	&:disabled {
 		transition: all 0.24s linear;

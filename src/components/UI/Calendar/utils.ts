@@ -6,7 +6,6 @@ export interface ICalendarCard {
 }
 
 export const calendarItemTransformer = (notes: ICalendarCard[], date: Date): ICalendarCard[] => {
-	if (!notes.length) return []
 	return notes.filter(
 		note =>
 			note &&
