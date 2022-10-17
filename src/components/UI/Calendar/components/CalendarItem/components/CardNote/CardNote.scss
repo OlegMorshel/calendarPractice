@@ -28,6 +28,19 @@ $orange: #ff7733;
 		@media (max-width: "1100px") {
 			max-width: 81px;
 		}
+		@media (max-width: "767px") {
+			max-width: 45px;
+			height: 10px;
+			flex-direction: row;
+			column-gap: 3px;
+			overflow: auto;
+			justify-content: center;
+			transform: translateX(-9px);
+		}
+		@media (max-width: "413px") {
+			max-width: 32px;
+			transform: translateX(-6px);
+		}
 		&::-webkit-scrollbar {
 			height: 0px;
 			width: 0px;
@@ -51,7 +64,10 @@ $orange: #ff7733;
 			@media (max-width: "1100px") {
 				padding: 3px 6px 3px 4px;
 			}
-
+			@media (max-width: "767px") {
+				padding: 0;
+				width: auto;
+			}
 			&__text {
 				font-family: "Helvetica Neue";
 				font-size: 12px;
@@ -68,6 +84,18 @@ $orange: #ff7733;
 				@media (max-width: "1100px") {
 					font-size: 10px;
 					line-height: 12px;
+				}
+				@media (max-width: "767px") {
+					color: transparent;
+					height: 10px;
+					width: 10px;
+					border-radius: 50%;
+					overflow: hidden;
+					background: $orange;
+				}
+				@media (max-width: "413px") {
+					height: 8px;
+					width: 8px;
 				}
 			}
 		}

@@ -21,6 +21,25 @@ $activeDay: #4ca6fe;
 			margin-bottom: 9px;
 		}
 
+		@media (max-width: 767px) {
+			font-size: 14px;
+			text-align: center;
+
+			padding: 3px 5px;
+			margin-bottom: 10px;
+
+			max-width: 26px;
+			max-height: 26px;
+		}
+		@media (max-width: 413px) {
+			font-size: 10px;
+			line-height: 12px;
+			padding: 2px;
+			margin-bottom: 2px;
+			max-width: 16px;
+			max-height: 16px;
+		}
+
 		&:hover {
 			color: white;
 

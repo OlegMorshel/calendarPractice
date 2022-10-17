@@ -34,3 +34,13 @@ $borderColor: #e8e8e8;
 		}
 	}
 }
+
+.button__add {
+	@media (max-width: "1455px") {
+		max-width: fit-content;
+		margin-left: auto;
+		display: block;
+
+		padding: 9px 18px;
+	}
+}

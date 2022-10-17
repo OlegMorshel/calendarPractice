@@ -79,7 +79,7 @@ const AddNoteFrom: React.FC<Props> = ({ classNamesForWrapper, addCalendarNote })
 					values={values.description}
 					error={errors.description}
 				/>
-				<UIButton label="Добавить" onClick={handleSubmit} disabled={!isValid} type="submit" />
+				<UIButton label="Добавить" classNameForWrapper={"button__add"} onClick={handleSubmit} disabled={!isValid} type="submit" />
 			</form>
 		</div>
 	)
