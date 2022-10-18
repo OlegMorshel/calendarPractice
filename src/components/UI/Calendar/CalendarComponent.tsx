@@ -4,11 +4,11 @@ import CalendarItem from "./components/CalendarItem/CalendarItem"
 import { calendarItemTransformer, ICalendarCard } from "./utils"
 import "./CalendarComponent.scss"
 
-interface Props {
+export interface ICalendarComponentProps {
 	calendarNotes: ICalendarCard[]
 }
 
-const CalendarComponent: React.FC<Props> = ({ calendarNotes }) => {
+const CalendarComponent: React.FC<ICalendarComponentProps> = ({ calendarNotes }) => {
 	const [value, setValue] = useState<Date | null>(null)
 
 	return (

@@ -30,9 +30,20 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/node-logger": "^6.5.12",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
@@ -43,6 +54,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.6",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
@@ -53,6 +65,7 @@
     "postcss-loader": "^7.0.0",
     "prettier": "^2.7.1",
     "process": "^0.11.10",
+    "prop-types": "^15.8.1",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0",
@@ -61,7 +74,7 @@
     "tslint-loader": "^3.5.4",
     "typescript-plugin-css-modules": "^3.4.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.73.0",
+    "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0"
@@ -73,12 +86,21 @@
     "types": "tsc",
     "prod": "webpack serve --mode=production --progress",
     "prepare": "husky install",
-    "format": "prettier --write --cache --cache-strategy metadata src"
+    "format": "prettier --write --cache --cache-strategy metadata src",
+    "sb": "start-storybook -p 6006 -s public",
+    "sb-build": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ]
+      }
     ]
   },
   "browserslist": {

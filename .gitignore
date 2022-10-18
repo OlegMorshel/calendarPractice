@@ -19,3 +19,7 @@ yarn-error.log*
 
 tsconfig.tsbuildinfo
 package-lock.json 
+
+
+#storybook
+storybook-static

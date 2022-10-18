@@ -3,7 +3,7 @@ import { Button } from "@mantine/core"
 
 import "./UIButton.scss"
 
-interface Props {
+export interface IUIButtonProps {
 	label?: string
 	classNameForWrapper?: string
 	disabled?: boolean
@@ -11,7 +11,7 @@ interface Props {
 	type?: "button" | "submit" | "reset"
 }
 
-const UIButton: React.FC<Props> = ({ label, classNameForWrapper, disabled = false, onClick, type }) => {
+const UIButton: React.FC<IUIButtonProps> = ({ label, classNameForWrapper, disabled = false, onClick, type }) => {
 	return (
 		<Button
 			title="text"

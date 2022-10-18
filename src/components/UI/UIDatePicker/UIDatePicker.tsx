@@ -1,7 +1,7 @@
 import { DatePicker } from "@mantine/dates"
 import React from "react"
 import "./UIDatePicker.scss"
-interface Props {
+export interface IUIDatePickerProps {
 	name: string
 	id: string
 	placeholder?: string
@@ -10,7 +10,7 @@ interface Props {
 	setFieldValue: (field: string, value: Date | null) => void
 	classNameForWrapper?: string
 }
-const UIDatePicker: React.FC<Props> = ({ setFieldValue, error, id, name, placeholder, values, classNameForWrapper }) => {
+const UIDatePicker: React.FC<IUIDatePickerProps> = ({ setFieldValue, error, id, name, placeholder, values, classNameForWrapper }) => {
 	const handleChange = (e: Date | null) => {
 		setFieldValue(name, e)
 	}

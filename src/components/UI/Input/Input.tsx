@@ -7,7 +7,7 @@ export enum InputTypeEnum {
 	TEXTAREA = "TEXTAREA",
 }
 
-interface Props {
+export interface IInputProps {
 	inputType?: InputTypeEnum
 	name?: string
 	id?: string
@@ -18,7 +18,7 @@ interface Props {
 	classNameForWrapper?: string
 }
 
-const Input: React.FC<Props> = ({ setValue, error, id, placeholder, values, name, classNameForWrapper, inputType }) => {
+const Input: React.FC<IInputProps> = ({ setValue, error, id, placeholder, values, name, classNameForWrapper, inputType }) => {
 	const handleChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = event => {
 		setValue(event)
 	}
