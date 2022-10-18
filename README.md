@@ -25,7 +25,7 @@ git clone git@github.com:OlegMorshel/calendarPractice.git
 ### 2. Open project directory
 
 ```sh
-cd workEstimateTable
+cd calendarPractice
 ```
 ### 3. Copy ".env.example" file, rename new file to ".env"
 ### 4. Build project
